@@ -1,6 +1,23 @@
-﻿namespace ConsoleApp2.Services;
+﻿using ConsoleApp2.Models;
+using LibraryApp.Models;
 
-public class Library
+namespace LibraryApp.Services
 {
-    private List<book>
+    public class Library
+    {
+        private List<Book> books = new List<Book>(); // Encapsulation
+
+        public void AddBook(Book book)
+        {
+            books.Add(book);
+        }
+
+        public void ListBooks()
+        {
+            Console.WriteLine("\n📚 Kütüphane Kitap Listesi:\n");
+
+            foreach (var book in books)
+                Console.WriteLine(book.GetInfo());
+        }
+    }
 }
